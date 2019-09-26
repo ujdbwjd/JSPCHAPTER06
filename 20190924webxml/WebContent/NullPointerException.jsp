@@ -13,21 +13,16 @@
 </p><hr>
 
 <%
+	//nullpointerexception 발생
 	String move = request.getParameter("move");
-	if(move != null && move.equals("redirect")) {
+	if(move.equals("redirect")) {
 		response.sendRedirect("PageMovingRedirect.jsp");
-	} else if(move != null && move.equals("forward")) {	
+	} else if(move.equals("forward")) {	
 		pageContext.forward("PageMovingForward.jsp");
-	} else if(move != null && move.equals("include")) {
+	} else if(move.equals("include")) {
 		pageContext.include("PageMovingInclude.jsp");
-	} else {
-%>
-		리다이렉트 : "redirect" <br>
-		포워드 : "forward" <br>
-		인클루드 : "include" <br> <hr>
-<%
 	}
 %>
-<h2>PageMoving.jsp 페이지의 마지막 입니다.</h2>
+
 </body>
 </html>
